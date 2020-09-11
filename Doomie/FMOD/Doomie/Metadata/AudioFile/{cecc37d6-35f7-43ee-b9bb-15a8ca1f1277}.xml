@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{cecc37d6-35f7-43ee-b9bb-15a8ca1f1277}">
+		<property name="assetPath">
+			<value>22981 SFX - 113 MDElement2.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>30.223673469387755</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{df863897-6f01-42af-bb61-2fb9425a9714}</destination>
+		</relationship>
+	</object>
+</objects>

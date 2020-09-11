@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{33cc9395-9f63-425e-90a9-52a7ebf4be17}">
+		<property name="assetPath">
+			<value>59 Two Single Body Falls On Bed..aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3599999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{df863897-6f01-42af-bb61-2fb9425a9714}</destination>
+		</relationship>
+	</object>
+</objects>

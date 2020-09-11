@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{93bed920-8e8c-41d6-93ce-2b7992b48fa7}">
+		<property name="assetPath">
+			<value>12839 SFX - Footstep Soft Sole Shoes Single Step Left On Metal Surface 1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.91428571428571426</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{df863897-6f01-42af-bb61-2fb9425a9714}</destination>
+		</relationship>
+	</object>
+</objects>
