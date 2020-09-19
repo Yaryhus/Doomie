@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Doomie/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637354624919679122
+  lastModified: 637360438917179317
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -53,7 +53,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Empty
   guid: c0b53eeac41169449f378ed9b22b03e9
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   Path: event:/Enemies/EnemyDie
   guid: 1f26c79752a7f04a94a358d15f31873f
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -153,7 +153,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Idle
   guid: 3a530662d79946488813891cff60e9bc
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -176,7 +176,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Shoot
   guid: 609d87cd5e704e4c922131435f767c3e
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Reload
   guid: 76dc10568a0ba743873c0244238156b7
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -222,7 +222,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Idle
   guid: 4248c781027502448d25b3a2a1628a5e
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -263,7 +263,7 @@ MonoBehaviour:
   Path: event:/Player/Dash
   guid: f06371df7d19bb4e8a7421c155ced3b1
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -286,7 +286,7 @@ MonoBehaviour:
   Path: event:/Player/Jump
   guid: 9950dbe513d4f2448e8b17ebfea5af8c
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -9021410572058523538}
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   EditorEvents:
   - {fileID: -5582438843568662330}
   - {fileID: 839704028930675638}
@@ -364,10 +364,10 @@ MonoBehaviour:
   - {fileID: 6524371031966442978}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   StringsBanks:
   - {fileID: -9021410572058523538}
-  stringsBankWriteTime: 637354624919679122
+  stringsBankWriteTime: 637360438917179317
   cacheVersion: 3
 --- !u!114 &190717991716945390
 MonoBehaviour:
@@ -384,7 +384,7 @@ MonoBehaviour:
   Path: event:/Ambient/Ambient
   guid: f1c99a5e57d2034dbcec601d70ec2a83
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   Path: event:/Player/Step
   guid: 97f31da1a469574a8433402a77a09c0c
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -466,7 +466,7 @@ MonoBehaviour:
   Path: event:/Enemies/EnemyHurt
   guid: 464b2fbfa9cc4f4fa5a6dae316eb3ed7
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -507,7 +507,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Empty
   guid: adaa299d1c13404ba78e85396055e554
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -515,6 +515,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 140
+--- !u!114 &1292852142493750761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637360438917099293
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1703153181944947474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +550,7 @@ MonoBehaviour:
   lastModified: 637354624919599102
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &2559697856721564829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +566,7 @@ MonoBehaviour:
   Path: event:/Player/Die
   guid: 64df578b4f9edd40880eb3373ed0a738
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -589,7 +607,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Shoot
   guid: 0699cf33f0661d459702c3e10016d2ef
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -652,7 +670,7 @@ MonoBehaviour:
   Path: event:/Player/ReceiveDamage
   guid: 1e4ee00305bc5c43a14f86f5af2b6799
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -787,7 +805,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Reload
   guid: cd51e10ce235ba41894154bd4e6066fc
   Banks:
-  - {fileID: 1703153181944947474}
+  - {fileID: 1292852142493750761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

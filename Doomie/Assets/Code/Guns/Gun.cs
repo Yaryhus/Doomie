@@ -215,9 +215,9 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, shootDirection, out hit, whatIsEnemy))
         {
-            //Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.name);
             //If something is impacted. Now we check if its the enemy 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            EnemyBehavior enemy = hit.transform.GetComponent<EnemyBehavior>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
