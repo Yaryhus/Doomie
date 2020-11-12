@@ -81,7 +81,7 @@ public class FPSMovementController : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
 
         //Jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded)
         {
             jumpSound.Play(transform, body);
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);

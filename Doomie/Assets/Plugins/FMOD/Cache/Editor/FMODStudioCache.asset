@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Doomie/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637360438917179317
+  lastModified: 637375279390331477
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1422
+    Value: 1772
   Exists: 1
 --- !u!114 &-8986768045454988570
 MonoBehaviour:
@@ -53,7 +53,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Empty
   guid: c0b53eeac41169449f378ed9b22b03e9
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -76,6 +76,69 @@ MonoBehaviour:
   Path: FMOD/Doomie/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637352790207260984
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6477389253745166734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotSeesEnemy
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotSeesEnemy
+  guid: 9f0980bb6a668c41a4f8441ff455fe2c
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1436
+--- !u!114 &-6097223228398962703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotBark
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotBark
+  guid: c0e5e1630d2dcd45827793d67661e894
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 700
+--- !u!114 &-5963652157486289421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375278761634160
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -112,7 +175,93 @@ MonoBehaviour:
   Path: event:/Enemies/EnemyDie
   guid: 1f26c79752a7f04a94a358d15f31873f
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-5519516999290176236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375275325263180
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-5400850354835322447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotSeesEnemy
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotSeesEnemy
+  guid: 9f0980bb6a668c41a4f8441ff455fe2c
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1436
+--- !u!114 &-5085414692730877629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotFollowsPlayer
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotFollowsPlayer
+  guid: a5c9abffb0a90d458818b388224ca46f
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-5062719219029126756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotFootsteps
+  guid: 8bd3b9d5d4bc5d42ad3db933effd18fe
+  Banks:
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -153,7 +302,29 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Idle
   guid: 3a530662d79946488813891cff60e9bc
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-3770189273820901873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotFollowsPlayer
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotFollowsPlayer
+  guid: a5c9abffb0a90d458818b388224ca46f
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -176,7 +347,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Shoot
   guid: 609d87cd5e704e4c922131435f767c3e
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -199,7 +370,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Reload
   guid: 76dc10568a0ba743873c0244238156b7
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -207,6 +378,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-1788943893428216135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotBark
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotBark
+  guid: c0e5e1630d2dcd45827793d67661e894
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 700
 --- !u!114 &-1701772527917412114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +416,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Idle
   guid: 4248c781027502448d25b3a2a1628a5e
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -263,7 +457,7 @@ MonoBehaviour:
   Path: event:/Player/Dash
   guid: f06371df7d19bb4e8a7421c155ced3b1
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -271,6 +465,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-1115901766732598410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotWanders
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotWanders
+  guid: 280ad4196b074a4092fb001428941b9e
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 487
+--- !u!114 &-1067476420179038215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375275356453485
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-1019200841911404249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +520,7 @@ MonoBehaviour:
   Path: event:/Player/Jump
   guid: 9950dbe513d4f2448e8b17ebfea5af8c
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -294,6 +528,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 255
+--- !u!114 &-915028673625613648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotAttack
+  guid: 3bab0868831e9a48a337d2eb648d947a
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 28316
 --- !u!114 &-816674174429010650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -9021410572058523538}
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   EditorEvents:
   - {fileID: -5582438843568662330}
   - {fileID: 839704028930675638}
@@ -362,12 +618,20 @@ MonoBehaviour:
   - {fileID: -3609799514725726939}
   - {fileID: -7012921142059458635}
   - {fileID: 6524371031966442978}
+  - {fileID: 2015111758628554497}
+  - {fileID: 5031798976072862074}
+  - {fileID: 2398444158712657581}
+  - {fileID: -5062719219029126756}
+  - {fileID: -6477389253745166734}
+  - {fileID: -5085414692730877629}
+  - {fileID: -1788943893428216135}
+  - {fileID: 1869257468896650599}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   StringsBanks:
   - {fileID: -9021410572058523538}
-  stringsBankWriteTime: 637360438917179317
+  stringsBankWriteTime: 637375279390331477
   cacheVersion: 3
 --- !u!114 &190717991716945390
 MonoBehaviour:
@@ -384,7 +648,7 @@ MonoBehaviour:
   Path: event:/Ambient/Ambient
   guid: f1c99a5e57d2034dbcec601d70ec2a83
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -407,7 +671,7 @@ MonoBehaviour:
   Path: event:/Player/Step
   guid: 97f31da1a469574a8433402a77a09c0c
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -466,7 +730,7 @@ MonoBehaviour:
   Path: event:/Enemies/EnemyHurt
   guid: 464b2fbfa9cc4f4fa5a6dae316eb3ed7
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -507,7 +771,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Empty
   guid: adaa299d1c13404ba78e85396055e554
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -532,6 +796,24 @@ MonoBehaviour:
   lastModified: 637360438917099293
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &1338431172776591039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375279390261479
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &1703153181944947474
 MonoBehaviour:
@@ -551,6 +833,75 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1869257468896650599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotDie
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotDie
+  guid: d25549b403791649b78ce636f51a8ab2
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &2015111758628554497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotWanders
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotWanders
+  guid: 280ad4196b074a4092fb001428941b9e
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &2398444158712657581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotHurt
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotHurt
+  guid: 824312074a8dab429ba1d3dd7210e0c9
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2559697856721564829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +917,7 @@ MonoBehaviour:
   Path: event:/Player/Die
   guid: 64df578b4f9edd40880eb3373ed0a738
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -607,7 +958,7 @@ MonoBehaviour:
   Path: event:/Weapons/Pistol/Pistol_Shoot
   guid: 0699cf33f0661d459702c3e10016d2ef
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -670,7 +1021,7 @@ MonoBehaviour:
   Path: event:/Player/ReceiveDamage
   guid: 1e4ee00305bc5c43a14f86f5af2b6799
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -678,6 +1029,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 700
+--- !u!114 &4135667816956245200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotFootsteps
+  guid: 8bd3b9d5d4bc5d42ad3db933effd18fe
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 28316
 --- !u!114 &4162253061865714361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +1066,24 @@ MonoBehaviour:
   Path: FMOD/Doomie/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637348624513842210
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4233958975222956894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Doomie/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375275062332627
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -754,6 +1145,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 760
+--- !u!114 &5031798976072862074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/FirstMascot/MascotAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/FirstMascot/MascotAttack
+  guid: 3bab0868831e9a48a337d2eb648d947a
+  Banks:
+  - {fileID: 1338431172776591039}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &5644357999170531069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +1204,28 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &6377681584850972934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotHurt
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotHurt
+  guid: 824312074a8dab429ba1d3dd7210e0c9
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 487
 --- !u!114 &6524371031966442978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +1241,7 @@ MonoBehaviour:
   Path: event:/Weapons/Shotgun/Shotgun_Reload
   guid: cd51e10ce235ba41894154bd4e6066fc
   Banks:
-  - {fileID: 1292852142493750761}
+  - {fileID: 1338431172776591039}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -831,6 +1267,28 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7379756108908618734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mascots/MascotDie
+  m_EditorClassIdentifier: 
+  Path: event:/Mascots/MascotDie
+  guid: d25549b403791649b78ce636f51a8ab2
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &8178541450989855253
 MonoBehaviour:
   m_ObjectHideFlags: 0

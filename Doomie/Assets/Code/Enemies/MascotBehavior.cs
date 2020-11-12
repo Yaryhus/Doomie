@@ -35,7 +35,13 @@ public class MascotBehavior : MonoBehaviour
     bool alreadyAttacked;
     [SerializeField]
     GameObject projectile;
-
+    [Header("Following")]
+    [SerializeField]
+    float playerSightRange;
+    [SerializeField]
+    float spreadFactorX;
+    [SerializeField]
+    float spreadFactorY;
     [Header("States")]
 
     [SerializeField]
@@ -43,15 +49,27 @@ public class MascotBehavior : MonoBehaviour
     [SerializeField]
     float attackRange;
     //[SerializeField]
+    public bool playerInSightRange;
     public bool enemyInSightRange;
     //[SerializeField]
     public bool enemyInAttackRange;
-
     [Header("Sounds")]
     [SerializeField]
     Sound hurtSound = null;
     [SerializeField]
     Sound deadSound = null;
+    [SerializeField]
+    Sound barkSound = null;
+    [SerializeField]
+    Sound seesEnemySound = null;
+    [SerializeField]
+    Sound followsPlayerSound = null;
+    [SerializeField]
+    Sound wanderSound = null;
+    [SerializeField]
+    Sound attackSound = null;
+    [SerializeField]
+    Sound footstepsSound = null;
 
     [Header("Animator")]
     [SerializeField]
@@ -72,6 +90,11 @@ public class MascotBehavior : MonoBehaviour
             //Sounds
             deadSound.Init();
             hurtSound.Init();
+            wanderSound.Init();
+            barkSound.Init();
+            footstepsSound.Init();
+            attackSound.Init();
+            followsPlayerSound.Init();
             //Camera
             cam = Camera.main.transform;
             //Player and agent
@@ -86,6 +109,12 @@ public class MascotBehavior : MonoBehaviour
         //Sounds
         deadSound.Init();
         hurtSound.Init();
+        wanderSound.Init();
+        barkSound.Init();
+        footstepsSound.Init();
+        attackSound.Init();
+        followsPlayerSound.Init();
+
         //Camera
         cam = Camera.main.transform;
         //Player and agent
@@ -100,34 +129,46 @@ public class MascotBehavior : MonoBehaviour
         //Check for sight and attack range
         enemyInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsEnemy);
         enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
+        //Check if mascot sees player
+        playerInSightRange = Physics.CheckSphere(transform.position, playerSightRange, whatIsPlayer);
+
         if (!isDead)
         {
-            if (!enemyInSightRange && !enemyInAttackRange) FollowPlayer();
+            if (Input.GetButtonDown("CallMascot")) FollowPlayer();
+            if (!playerInSightRange && !enemyInSightRange && !enemyInAttackRange) FollowPlayer();
+            if (!enemyInSightRange && !enemyInAttackRange) Wander();
             if (enemyInSightRange && !enemyInAttackRange) ChaseEnemy();
             if (enemyInAttackRange && enemyInSightRange) AttackEnemy();
         }
 
     }
-
+    private void Wander()
+    {
+        wanderSound.Play(transform);
+    }
     private void FollowPlayer()
     {
-        /*
-        if (!walkPointSet) SearchWalkPoint();
+        if (Vector3.Distance(transform.position, player.position) <= spreadFactorX)
+        {
+            //Already too close, bark
+            Debug.Log("Woof");
+            barkSound.Play(transform);
+        }
+        else
+        {
+            animator.SetBool("isFollowing", true);
+            followsPlayerSound.Play(transform);
+            Vector3 playerLocation = player.position;
+            //A minimun distance from the player
+            while (Vector3.Distance(transform.position, player.position) >= spreadFactorX)
+            {
+                playerLocation.x += Random.Range(-spreadFactorX, spreadFactorX);
+                playerLocation.y += Random.Range(-spreadFactorY, spreadFactorY);
 
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-            */
-
-        //Debug.Log("I follow");
-        animator.SetBool("isFollowing", true);
-        //follow the player
-        agent.SetDestination(player.position);
+            }
+            //follow the player
+            agent.SetDestination(playerLocation);
+        }
     }
     /*
     private void SearchWalkPoint()
@@ -152,6 +193,7 @@ public class MascotBehavior : MonoBehaviour
             Debug.Log(d.gameObject.name);
         }
         animator.SetBool("isFollowing", true);
+        seesEnemySound.Play(transform);
         //follow the enemy
         agent.SetDestination(enemy.position);
     }
@@ -170,6 +212,7 @@ public class MascotBehavior : MonoBehaviour
             {
                 //Attack code: raycast, projectile, etc.
                 Debug.Log("Woof woof ataco");
+                attackSound.Play(transform);
                 enemy.GetComponent<EnemyBehavior>().TakeDamage(meleeDamageAmmount);
 
                 //Cooldown
@@ -226,6 +269,8 @@ public class MascotBehavior : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, playerSightRange);
     }
 
 }
