@@ -10,6 +10,7 @@ public class FPSLookController : MonoBehaviour
     Transform playerBody = null;
 
     float xRotation = 0f;
+    bool vertCameraLocked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,24 @@ public class FPSLookController : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
+        //We may lock vert camera for the blade mode
+        if (!vertCameraLocked)
+        {
+
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            xRotation -= mouseY;
+        }
+
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
-        
 
+
+    }
+    public void LockVerticalCamera(bool what)
+    {
+            vertCameraLocked = what;
     }
 }

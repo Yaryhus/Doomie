@@ -134,8 +134,9 @@ public class MascotBehavior : MonoBehaviour
 
         if (!isDead)
         {
-            if (Input.GetButtonDown("CallMascot")) FollowPlayer();
-            if (!playerInSightRange && !enemyInSightRange && !enemyInAttackRange) FollowPlayer();
+            //if (Input.GetButtonDown("CallMascot")) FollowPlayer();
+            //if (!playerInSightRange && !enemyInSightRange && !enemyInAttackRange) FollowPlayer();
+
             if (!enemyInSightRange && !enemyInAttackRange) Wander();
             if (enemyInSightRange && !enemyInAttackRange) ChaseEnemy();
             if (enemyInAttackRange && enemyInSightRange) AttackEnemy();
@@ -146,6 +147,7 @@ public class MascotBehavior : MonoBehaviour
     {
         wanderSound.Play(transform);
     }
+    /* Esto crashes Unity entero
     private void FollowPlayer()
     {
         if (Vector3.Distance(transform.position, player.position) <= spreadFactorX)
@@ -170,6 +172,8 @@ public class MascotBehavior : MonoBehaviour
             agent.SetDestination(playerLocation);
         }
     }
+    */
+
     /*
     private void SearchWalkPoint()
     {
