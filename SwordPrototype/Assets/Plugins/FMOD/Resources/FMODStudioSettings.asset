@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 1
-  sourceProjectPath: ../../Git/Doomie/Doomie/FMOD/Doomie/Doomie.fspro
-  sourceBankPath: ..\..\Git\Doomie\Doomie\FMOD\Doomie\Build
+  sourceProjectPath: ../../Git/Doomie/SwordPrototype/FMOD/Doomie/Doomie.fspro
+  sourceBankPath: ..\..\Git\Doomie\SwordPrototype\FMOD\Doomie\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
