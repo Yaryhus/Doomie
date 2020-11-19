@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
+  HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Git/Doomie/SwordPrototype/FMOD/Doomie/Doomie.fspro
-  sourceBankPath: ..\..\Git\Doomie\SwordPrototype\FMOD\Doomie\Build
+  sourceProjectPath: FMOD/Doomie/Doomie.fspro
+  sourceBankPath: FMOD\Doomie\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0

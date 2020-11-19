@@ -143,8 +143,8 @@ public class SlicerPlane : MonoBehaviour
             //recargar tiempo de Slowmo
             if(timeRemaining < timeAvailable)
             {
-                timeRemaining += Time.deltaTime;
-                if()
+                //timeRemaining += Time.deltaTime;
+                //if()
             }
 
         }
