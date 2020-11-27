@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{1a3ff6cf-5392-490b-95d7-8900fcf26dbb}">
+		<property name="assetPath">
+			<value>ESM_Jump_4_Classic_Retro_8_Bit_.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.25517006802721087</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b0aec41d-0489-490f-be28-738de7899d48}</destination>
+		</relationship>
+	</object>
+</objects>
