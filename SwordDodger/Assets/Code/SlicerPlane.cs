@@ -20,6 +20,11 @@ public class SlicerPlane : MonoBehaviour
     public LayerMask layerMask;
     Vector3 cutPlaneDefault;
     public Material sliceMaterial;
+    public Animator anim;
+    //Target to see and slice
+    public Transform target;
+    //Target inside the plane
+    public Transform planeTarget;
 
     [Header("Variables")]
     [SerializeField]
@@ -80,12 +85,15 @@ public class SlicerPlane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("X", Mathf.Clamp(target.localPosition.x + 0.3f, -1, 1));
+        anim.SetFloat("Y", Mathf.Clamp(target.localPosition.y + .18f, -1, 1));
+
         //If holding Right click, we slow time and activate "Blade mode"
         if (Input.GetMouseButton(1))
         {
             //Empezamos a contar tiempo en slowmo hasta que se le gaste.
             isInBladeMode = true;
-
+            anim.SetBool("bladeMode", isInBladeMode);
             //Debug.Log("Tiempo lentooo");
             //Slow time code
             Time.timeScale = slowmotion;
@@ -117,6 +125,7 @@ public class SlicerPlane : MonoBehaviour
             ResetSlicePlane();
             cutPlane.gameObject.SetActive(false);
             isInBladeMode = false;
+            anim.SetBool("bladeMode", isInBladeMode);
         }
         //update text
         text.SetText(slicesAvailable - slicesUsed + " / " + slicesAvailable);
@@ -150,14 +159,16 @@ public class SlicerPlane : MonoBehaviour
     }
     void RotateSlicePlane()
     {
-        cutPlane.eulerAngles += new Vector3(0, 0, -Input.GetAxis("Mouse X") * 5);
+        cutPlane.eulerAngles += new Vector3(0, 0, -Input.GetAxis("Mouse X") * 6);
 
     }
     void ResetSlicePlane()
     {
         //Debug.Log("Resetting from " + cutPlane.rotation);
-        cutPlane.rotation = Quaternion.Euler(-5.0f, 0.0f, 0.0f);
-        cutPlane.localRotation = Quaternion.Euler(-5.0f, 0.0f, 0.0f);
+        cutPlane.rotation = Quaternion.Euler(-4.0f, 3.0f, -45.0f);
+        cutPlane.localRotation = Quaternion.Euler(-4.0f, 3.0f, -45.0f);
+        anim.SetFloat("X", 1f);
+        anim.SetFloat("Y", -1f);
         //Debug.Log("To... " + cutPlane.rotation);
 
         //cutPlane = cutPlaneDefault;
@@ -183,6 +194,7 @@ public class SlicerPlane : MonoBehaviour
             Collider[] hits = Physics.OverlapBox(cutPlane.position, new Vector3(10, 0.1f, 10), cutPlane.rotation, layerMask);
             CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, shakeFadeInTime, shakeFadeOutTime);
 
+                planeTarget.position = new Vector3(planeTarget.position.x * -1,planeTarget.position.y * -0.5f);
             //Hits air or nonSlashable object
             if (hits.Length <= 0)
             {
@@ -194,7 +206,7 @@ public class SlicerPlane : MonoBehaviour
 
             for (int i = 0; i < hits.Length; i++)
             {
-                SlicedHull hull = SliceObject(hits[i].gameObject, null);
+                SlicedHull hull = SliceObject(hits[i].gameObject, sliceMaterial);
 
                 /*
                 //Enemy damage
@@ -206,8 +218,9 @@ public class SlicerPlane : MonoBehaviour
 
                 }
                 else*/
-                SliceSound.SetParameter("SliceMaterial", 2);
 
+               
+                SliceSound.SetParameter("SliceMaterial", 2);
                 SliceSound.PlayOneShot(transform);
 
                 if (hull != null)
@@ -241,7 +254,9 @@ public class SlicerPlane : MonoBehaviour
 
     public SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
     {
-        //Slice
+        if (obj.GetComponent<MeshFilter>() == null)
+            return null;
+
         return obj.Slice(cutPlane.position, cutPlane.up, crossSectionMaterial);
     }
 

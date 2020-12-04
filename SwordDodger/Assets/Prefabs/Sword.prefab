@@ -705,6 +705,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 6144
   sliceMaterial: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  anim: {fileID: 0}
   slicesAvailable: 10
   timeAvailable: 5
   timeToRecoverSlice: 0.2
