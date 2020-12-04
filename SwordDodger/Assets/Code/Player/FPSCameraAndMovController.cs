@@ -1,4 +1,5 @@
-﻿using EZCameraShake;
+﻿using Cinemachine;
+using EZCameraShake;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,12 +16,12 @@ public class FPSCameraAndMovController : MonoBehaviour
     public float gravity = 20.0f;
 
     [Header("Opciones de camara")]
-    public Camera cam;
+    public CinemachineVirtualCamera cam;
     public float mouseHorizontal = 3.0f;
     public float mouseVertical = 2.0f;
     public float minRotation = -65.0f;
     public float maxRotation = 60.0f;
-    
+
     float h_mouse, v_mouse;
     private Vector3 move = Vector3.zero;
     public bool vertCameraLocked = false;
@@ -32,13 +33,16 @@ public class FPSCameraAndMovController : MonoBehaviour
 
     }
 
-
-
     void Update()
     {
 
         h_mouse = mouseHorizontal * Input.GetAxis("Mouse X");
-        v_mouse += mouseVertical * Input.GetAxis("Mouse Y");
+        
+        //We may lock vert camera for the blade mode
+        if (!vertCameraLocked)
+        {
+            v_mouse += mouseVertical * Input.GetAxis("Mouse Y");
+        }
 
         v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
 
@@ -47,13 +51,7 @@ public class FPSCameraAndMovController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
-            //We may lock vert camera for the blade mode
-            if (!vertCameraLocked)
-            {
-                move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            }
-            else
-                move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+            move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 
             /*
             if (Input.GetKey(KeyCode.LeftShift))
@@ -73,12 +71,6 @@ public class FPSCameraAndMovController : MonoBehaviour
     public void LockVerticalCamera(bool what)
     {
         vertCameraLocked = what;
-    }
-    //No se usa
-    public void Shake(float shakeMagnitude, float shakeRoughness, float shakeFadeInTime, float shakeFadeOutTime)
-    {
-        CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, shakeFadeInTime, shakeFadeOutTime);
-
     }
 
 }

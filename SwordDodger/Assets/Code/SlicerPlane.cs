@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Cinemachine;
+
 
 public class SlicerPlane : MonoBehaviour
 {
@@ -25,6 +27,10 @@ public class SlicerPlane : MonoBehaviour
     public Transform target;
     //Target inside the plane
     public Transform planeTarget;
+    //Camera
+    //public CinemachineExternalCamera cam;
+    public CinemachineImpulseSource impulseSource;
+    public ParticleSystem[] particles;
 
     [Header("Variables")]
     [SerializeField]
@@ -49,7 +55,8 @@ public class SlicerPlane : MonoBehaviour
     Sound idleSound = null;
     [SerializeField]
     Sound rechargeSliceSound = null;
-
+    
+    /* Shake causa bloqueo de la coordenada Y
     [Header("Shake")]
     [SerializeField]
     [Tooltip("Suavidad del tiemble. Valores bajos son mas suaves")]
@@ -63,6 +70,7 @@ public class SlicerPlane : MonoBehaviour
     [SerializeField]
     [Tooltip("Cuanto tarda en irse")]
     float shakeFadeOutTime = 1f;
+    */
 
     [Header("HUD")]
     [SerializeField]
@@ -199,7 +207,8 @@ public class SlicerPlane : MonoBehaviour
             //Increment slice and do the rest
             slicesUsed++;
             Collider[] hits = Physics.OverlapBox(cutPlane.position, new Vector3(10, 0.1f, 10), cutPlane.rotation, layerMask);
-            CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, shakeFadeInTime, shakeFadeOutTime);
+            //CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, shakeFadeInTime, shakeFadeOutTime);
+            ShakeCamera();
 
             planeTarget.localPosition = new Vector3(planeTarget.localPosition.x * -1, planeTarget.localPosition.y * -0.5f);
             //Hits air or nonSlashable object
@@ -208,12 +217,17 @@ public class SlicerPlane : MonoBehaviour
                 //hits air sound
                 SliceSound.SetParameter("SliceMaterial", 0);
                 SliceSound.PlayOneShot(transform);
+                particles[0].Play();
                 return;
             }
 
             for (int i = 0; i < hits.Length; i++)
             {
                 SlicedHull hull = SliceObject(hits[i].gameObject, sliceMaterial);
+                /*
+                particles[1].transform.position = hits[i].transform.position;
+                particles[1].transform.forward = cam.transform.forward;
+                particles[1].Play();*/
 
                 /*
                 //Enemy damage
@@ -267,5 +281,15 @@ public class SlicerPlane : MonoBehaviour
         return obj.Slice(cutPlane.position, cutPlane.up, crossSectionMaterial);
     }
 
+    public void ShakeCamera()
+    {
+        //cam.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+        impulseSource.GenerateImpulse();
+        
+        foreach (ParticleSystem p in particles)
+        {
+            p.Play();
+        }
+    }
 
 }
