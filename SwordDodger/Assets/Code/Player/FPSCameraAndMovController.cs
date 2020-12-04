@@ -23,7 +23,7 @@ public class FPSCameraAndMovController : MonoBehaviour
     
     float h_mouse, v_mouse;
     private Vector3 move = Vector3.zero;
-    bool vertCameraLocked = false;
+    public bool vertCameraLocked = false;
 
     void Start()
     {

@@ -2494,10 +2494,20 @@ PrefabInstance:
       propertyPath: planeTarget
       value: 
       objectReference: {fileID: 627969887}
+    - target: {fileID: 296486269911137792, guid: a947f638306dadb4b91986c494a529a2,
+        type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 296486269911137794, guid: a947f638306dadb4b91986c494a529a2,
         type: 3}
       propertyPath: near clip plane
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 296486269911137795, guid: a947f638306dadb4b91986c494a529a2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 296486270691158180, guid: a947f638306dadb4b91986c494a529a2,
         type: 3}
