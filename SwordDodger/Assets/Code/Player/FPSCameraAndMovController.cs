@@ -14,6 +14,7 @@ public class FPSCameraAndMovController : MonoBehaviour
     public float runSpeed = 10.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
+    public float health = 100f;
 
     [Header("Opciones de camara")]
     public CinemachineVirtualCamera cam;
@@ -22,22 +23,42 @@ public class FPSCameraAndMovController : MonoBehaviour
     public float minRotation = -65.0f;
     public float maxRotation = 60.0f;
 
+    [Header("Sonido")]
+    [SerializeField]
+    Sound hurtSound = null;
+    [SerializeField]
+    Sound deadSound = null;
+    [SerializeField]
+    Sound walkSound = null;
+    [SerializeField]
+    float timeBetweenSteps = 0.2f;
+    [SerializeField]
+    Sound jumpSound = null;
+    [SerializeField]
+    Sound dashSound = null;
+
+    bool playerIsMoving = false;
     float h_mouse, v_mouse;
     private Vector3 move = Vector3.zero;
     public bool vertCameraLocked = false;
+    bool isDead = false;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
 
+        jumpSound.Init();
+        walkSound.Init();
+
+        InvokeRepeating("CallFootsteps", 0, timeBetweenSteps);
     }
 
     void Update()
     {
 
         h_mouse = mouseHorizontal * Input.GetAxis("Mouse X");
-        
+
         //We may lock vert camera for the blade mode
         if (!vertCameraLocked)
         {
@@ -73,4 +94,33 @@ public class FPSCameraAndMovController : MonoBehaviour
         vertCameraLocked = what;
     }
 
+    public void TakeDamage(float amount)
+    {
+        if (!isDead)
+        {
+            hurtSound.Play(transform);
+            health -= amount;
+            if (health <= 0)
+                Die();
+        }
+    }
+    void Die()
+    {
+        deadSound.Play(transform);
+        //animator.SetTrigger("dead");
+        //is dead, so no more "takeDamage"
+        isDead = true;
+        Debug.Log("Im dead");
+        //Destroy(gameObject, 15.0f);
+    }
+    void CallFootsteps()
+    {
+        if (playerIsMoving == true)
+        {
+            //Debug.Log("Step Sound");
+            //Debug.Log ("Player is moving");
+            walkSound.Play(transform);
+        }
+
+    }
 }

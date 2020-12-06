@@ -13,6 +13,13 @@ public class SimpleProjectile : MonoBehaviour
     [SerializeField]
     float speed = 2;
 
+    [Header("Sonido")]
+    [SerializeField]
+    Sound impactPlayerSound = null;
+    [SerializeField]
+    Sound impactNoneSound = null;
+    [SerializeField]
+    Sound trayectorySound = null;
     GameObject owner;
 
     // Start is called before the first frame update
@@ -20,10 +27,10 @@ public class SimpleProjectile : MonoBehaviour
     {
         cam = Camera.main.transform;
         player = PlayerManager.instance.Player;
-        
-        Vector3 dir = new Vector3(owner.transform.forward.x,owner.transform.forward.y,owner.transform.forward.z).normalized;
-        this.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
 
+        Vector3 dir = new Vector3(owner.transform.forward.x, owner.transform.forward.y, owner.transform.forward.z).normalized;
+        this.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+        trayectorySound.Play(transform);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,11 +40,16 @@ public class SimpleProjectile : MonoBehaviour
         if (player != null)
         {
             player.TakeDamage(damage);
+            impactPlayerSound.Play(other.transform);
         }
         //If collides with anything else
+        else
+        {
+            impactNoneSound.Play(other.transform);
+        }
 
-            Destroy(this.gameObject);
-
+        Destroy(this.gameObject);
+        trayectorySound.Stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public GameObject getOwner()
@@ -49,5 +61,5 @@ public class SimpleProjectile : MonoBehaviour
     {
         owner = own;
     }
-   
+
 }

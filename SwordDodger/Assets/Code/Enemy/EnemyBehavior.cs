@@ -16,6 +16,8 @@ public class EnemyBehavior : MonoBehaviour
     LayerMask whatIsPlayer;
     GameObject playerGO = null;
     Transform player;
+    [SerializeField]
+    Transform shootPoint = null;
 
     [Header("Patrol")]
     [SerializeField]
@@ -47,6 +49,8 @@ public class EnemyBehavior : MonoBehaviour
     Sound hurtSound = null;
     [SerializeField]
     Sound deadSound = null;
+    [SerializeField]
+    Sound shootSound = null;
 
     [Header("Animator")]
     [SerializeField]
@@ -127,7 +131,7 @@ public class EnemyBehavior : MonoBehaviour
     void ChasePlayer()
     {
         //Debug.Log("I follow");
-        animator.SetBool("isFollowing", true);
+        //animator.SetBool("isFollowing", true);
         //follow the player
         agent.SetDestination(player.position);
     }
@@ -144,8 +148,9 @@ public class EnemyBehavior : MonoBehaviour
             {
                 //Attack code: raycast, projectile, etc.
                 //Rigidbody rb = Instantiate(Projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                GameObject proj = Instantiate(projectile, transform.position + transform.forward.normalized, Quaternion.identity);
+                GameObject proj = Instantiate(projectile, shootPoint.transform.position + transform.forward.normalized, Quaternion.identity);
                 proj.GetComponent<SimpleProjectile>().setOwner(this.gameObject);
+                shootSound.Play(transform);
                 //
                 //Cooldown
                 alreadyAttacked = true;
@@ -171,7 +176,7 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         deadSound.Play(transform);
-        animator.SetTrigger("dead");
+        //animator.SetTrigger("dead");
         //is dead, so no more "takeDamage"
         isDead = true;
         Destroy(gameObject, 15.0f);

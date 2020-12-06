@@ -46,6 +46,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-8164300219162766210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-7415774160188235760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +154,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 30223
+--- !u!114 &-5901007094993112095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectile/Impact None
+  m_EditorClassIdentifier: 
+  Path: event:/Projectile/Impact None
+  guid: 7f01b5ce5992eb469f5e48c245589d5c
+  Banks:
+  - {fileID: -1470809739105873982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3173247394348830454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637427083976124016
+  lastModified: 637428702959428122
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -194,7 +234,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-562418766092091157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +278,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1002560479030296672}
+  - {fileID: -8164300219162766210}
   MinDistance: 0
   MaxDistance: 0
   Length: 1110
@@ -269,13 +309,63 @@ MonoBehaviour:
   - {fileID: 6293562361095210103}
   - {fileID: -5946246581843463732}
   - {fileID: -8833337230589639874}
+  - {fileID: 7596936046229324806}
+  - {fileID: -5901007094993112095}
+  - {fileID: 5891008836927784979}
+  - {fileID: 4755422323743297763}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1470809739105873982}
   StringsBanks:
   - {fileID: 8938838560941822200}
-  stringsBankWriteTime: 637427083976134021
+  stringsBankWriteTime: 637428702959508224
   cacheVersion: 4
+--- !u!114 &4755422323743297763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Shoot
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Shoot
+  guid: d09694367208744f97c8587743332efa
+  Banks:
+  - {fileID: -1470809739105873982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5891008836927784979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectile/Impact
+  m_EditorClassIdentifier: 
+  Path: event:/Projectile/Impact
+  guid: cb7e7aac746ac845a8c0c6b690c402d9
+  Banks:
+  - {fileID: -1470809739105873982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6200210255848315222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +411,29 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+  Length: 0
+--- !u!114 &7596936046229324806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectile/Trayectory
+  m_EditorClassIdentifier: 
+  Path: event:/Projectile/Trayectory
+  guid: 6f58fb4029804e4e9ef6849c38aa0760
+  Banks:
+  - {fileID: -1470809739105873982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0
 --- !u!114 &7955981924362590222
 MonoBehaviour:
@@ -376,9 +489,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637427083976134021
+  lastModified: 637428702959508224
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1256
+    Value: 1462
   Exists: 1
