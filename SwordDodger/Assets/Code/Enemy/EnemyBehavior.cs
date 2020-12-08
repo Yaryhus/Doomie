@@ -18,6 +18,8 @@ public class EnemyBehavior : MonoBehaviour
     Transform player;
     [SerializeField]
     Transform shootPoint = null;
+    [SerializeField]
+    GameObject body = null;
 
     [Header("Patrol")]
     [SerializeField]
@@ -91,6 +93,11 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //if enemy loses body = dies by being cut in half
+        if (body == null)
+            Die();
+
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -179,7 +186,7 @@ public class EnemyBehavior : MonoBehaviour
         //animator.SetTrigger("dead");
         //is dead, so no more "takeDamage"
         isDead = true;
-        Destroy(gameObject, 15.0f);
+        Destroy(gameObject);
     }
     //------------------------------------FACE PLAYER------------------------------------------
     //the gameobject looks at the player

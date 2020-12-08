@@ -29,14 +29,15 @@ public class SimpleProjectile : MonoBehaviour
         player = PlayerManager.instance.Player;
 
         Vector3 dir = new Vector3(owner.transform.forward.x, owner.transform.forward.y, owner.transform.forward.z).normalized;
-        this.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+        this.GetComponent<Rigidbody>().AddForce(new Vector3(dir.x * speed, 0f, dir.z * speed), ForceMode.Impulse);
         trayectorySound.Play(transform);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("colisiono con " + other.name);
         //If the player is hit
-        PlayerHealth player = other.transform.GetComponent<PlayerHealth>();
+        FPSCameraAndMovController player = other.transform.GetComponent<FPSCameraAndMovController>();
         if (player != null)
         {
             player.TakeDamage(damage);

@@ -269,7 +269,7 @@ public class SlicerPlane : MonoBehaviour
         rb.AddExplosionForce(150, go.transform.position, 10);
 
         //Adding Self destruct script.
-        //go.AddComponent<FadeAndDestroy>();
+        go.AddComponent<FadeAndDestroy>();
 
     }
 

@@ -15,6 +15,10 @@ public class FPSCameraAndMovController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public float health = 100f;
+    public float blinkDistance = 5.0f;
+    public float dashTime;
+    public float dashSpeed;
+    public Vector3 moveDir;
 
     [Header("Opciones de camara")]
     public CinemachineVirtualCamera cam;
@@ -70,6 +74,12 @@ public class FPSCameraAndMovController : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(-v_mouse, 0, 0);
         transform.Rotate(0, h_mouse, 0);
 
+        if(Input.GetButtonDown("Dash"))
+        {
+            dashSound.PlayOneShot(transform);
+            StartCoroutine(Dash());
+        }
+
         if (characterController.isGrounded)
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
@@ -86,7 +96,22 @@ public class FPSCameraAndMovController : MonoBehaviour
         }
         move.y -= gravity * Time.deltaTime;
 
+        //Direction of the movement, to use dash
+        moveDir = move.normalized;
+
         characterController.Move(move * Time.deltaTime);
+    }
+
+    IEnumerator Dash()
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + dashTime)
+        {
+            characterController.Move(moveDir * dashSpeed * Time.deltaTime);
+            yield return null;
+
+        }
+
     }
 
     public void LockVerticalCamera(bool what)
@@ -110,7 +135,12 @@ public class FPSCameraAndMovController : MonoBehaviour
         //animator.SetTrigger("dead");
         //is dead, so no more "takeDamage"
         isDead = true;
-        Debug.Log("Im dead");
+        //Debug.Log("Im dead");
+        this.gameObject.SetActive(false);
+
+        Time.timeScale = 0.0f;
+        LevelManager.instance.PlayerDied();
+
         //Destroy(gameObject, 15.0f);
     }
     void CallFootsteps()

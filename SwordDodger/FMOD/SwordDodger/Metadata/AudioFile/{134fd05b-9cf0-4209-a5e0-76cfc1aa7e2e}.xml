@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{134fd05b-9cf0-4209-a5e0-76cfc1aa7e2e}">
+		<property name="assetPath">
+			<value>Trayectoria.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.29891666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b0aec41d-0489-490f-be28-738de7899d48}</destination>
+		</relationship>
+	</object>
+</objects>

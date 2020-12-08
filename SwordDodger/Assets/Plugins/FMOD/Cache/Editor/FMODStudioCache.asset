@@ -62,7 +62,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7415774160188235760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,13 +124,13 @@ MonoBehaviour:
   guid: c886a9834d41fb4abb33525edfbf72d5
   Banks:
   - {fileID: -1470809739105873982}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 1400
 --- !u!114 &-5946246581843463732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +177,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3665816098378058359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &-3173247394348830454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +217,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 255
+--- !u!114 &-1677806149843794876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &-1470809739105873982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,9 +248,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637428702959428122
+  lastModified: 637430574473579992
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-1216319991294778521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 1
 --- !u!114 &-1002560479030296672
 MonoBehaviour:
@@ -278,7 +329,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8164300219162766210}
+  - {fileID: -1216319991294778521}
   MinDistance: 0
   MaxDistance: 0
   Length: 1110
@@ -318,8 +369,25 @@ MonoBehaviour:
   - {fileID: -1470809739105873982}
   StringsBanks:
   - {fileID: 8938838560941822200}
-  stringsBankWriteTime: 637428702959508224
+  stringsBankWriteTime: 637430574473670010
   cacheVersion: 4
+--- !u!114 &1596073325050296336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &4755422323743297763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +480,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &7586162326693003013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &7596936046229324806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,11 +515,11 @@ MonoBehaviour:
   - {fileID: -1470809739105873982}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 300
 --- !u!114 &7955981924362590222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,6 +560,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &8345422073635120325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &8938838560941822200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637428702959508224
+  lastModified: 637430574473670010
   LoadResult: 0
   FileSizes:
   - Name: Desktop
