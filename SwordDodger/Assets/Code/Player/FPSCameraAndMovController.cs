@@ -46,12 +46,17 @@ public class FPSCameraAndMovController : MonoBehaviour
     private Vector3 move = Vector3.zero;
     public bool vertCameraLocked = false;
     bool isDead = false;
+    public Animator animator;
+
+    //Headbob
+    private bool left;
+    private bool right;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-
+        //animator = GetComponent<Animator>();
         jumpSound.Init();
         walkSound.Init();
 
@@ -74,12 +79,13 @@ public class FPSCameraAndMovController : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(-v_mouse, 0, 0);
         transform.Rotate(0, h_mouse, 0);
 
-        if(Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash"))
         {
             dashSound.PlayOneShot(transform);
             StartCoroutine(Dash());
         }
 
+        //Movement
         if (characterController.isGrounded)
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
@@ -90,10 +96,34 @@ public class FPSCameraAndMovController : MonoBehaviour
             else*/
 
             move = transform.TransformDirection(move) * walkSpeed;
+            animator.SetBool("IsMoving", true);
+
+            /*
+                        if (left == true)
+                        {
+                                animator.Play("UserCamera_MoveL");
+                                left = false;
+                                right = true;
+                        }
+                        if (right == true)
+                        {
+                                animator.Play("UserCamera_MoveR");
+                                right = false;
+                                left = true;
+                            }  
+            /**/
 
             if (Input.GetKey(KeyCode.Space))
                 move.y = jumpSpeed;
         }
+
+        //Paramos
+        if(characterController.velocity.magnitude < 0.1f)
+        {
+            animator.SetBool("IsMoving", false);
+
+        }
+
         move.y -= gravity * Time.deltaTime;
 
         //Direction of the movement, to use dash
@@ -131,8 +161,15 @@ public class FPSCameraAndMovController : MonoBehaviour
     }
     void Die()
     {
+        isDead = true;
+        //Sound and anim
         deadSound.Play(transform);
-        //animator.SetTrigger("dead");
+        animator.SetTrigger("Dead");
+        StartCoroutine(DeathSequence(0.85f));
+
+        /*
+        deadSound.Play(transform);
+        animator.SetTrigger("Dead");
         //is dead, so no more "takeDamage"
         isDead = true;
         //Debug.Log("Im dead");
@@ -140,9 +177,20 @@ public class FPSCameraAndMovController : MonoBehaviour
 
         Time.timeScale = 0.0f;
         LevelManager.instance.PlayerDied();
-
+        */
         //Destroy(gameObject, 15.0f);
     }
+    IEnumerator DeathSequence(float deathTime)
+    {
+        yield return new WaitForSeconds(deathTime);
+        //Debug.Log("Im dead");
+        //this.gameObject.SetActive(false);
+        characterController.gameObject.SetActive(false);
+
+        Time.timeScale = 0.0f;
+        LevelManager.instance.PlayerDied();
+    }
+
     void CallFootsteps()
     {
         if (playerIsMoving == true)
