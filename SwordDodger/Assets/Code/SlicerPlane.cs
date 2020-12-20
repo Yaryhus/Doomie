@@ -27,11 +27,12 @@ public class SlicerPlane : MonoBehaviour
     public Transform target;
     //Target inside the plane
     public Transform planeTarget;
+    //Reflector
+    public GameObject reflector;
     //Camera
     //public CinemachineExternalCamera cam;
     public CinemachineImpulseSource impulseSource;
     public ParticleSystem[] particles;
-
     [Header("Variables")]
     [SerializeField]
     int slicesAvailable = 3;
@@ -55,29 +56,13 @@ public class SlicerPlane : MonoBehaviour
     Sound idleSound = null;
     [SerializeField]
     Sound rechargeSliceSound = null;
-    
-    /* Shake causa bloqueo de la coordenada Y
-    [Header("Shake")]
-    [SerializeField]
-    [Tooltip("Suavidad del tiemble. Valores bajos son mas suaves")]
-    float shakeRoughness = 1.0f;
-    [SerializeField]
-    [Tooltip("Intensidad del tiemble")]
-    float shakeMagnitude = 1.0f;
-    [SerializeField]
-    [Tooltip("Cuanto tarda en ocurrir")]
-    float shakeFadeInTime = 0.1f;
-    [SerializeField]
-    [Tooltip("Cuanto tarda en irse")]
-    float shakeFadeOutTime = 1f;
-    */
 
     [Header("HUD")]
     [SerializeField]
     TextMeshProUGUI text;
     Image slowMoBar;
 
-    bool isInBladeMode;
+    public bool isInBladeMode;
     Transform parent;
     // Start is called before the first frame update
     void Start()
@@ -93,6 +78,13 @@ public class SlicerPlane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Releases mouse click
+        if(Input.GetMouseButtonUp(0))
+        {
+            //reflector.SetActive(false);
+        }
+
         if (isInBladeMode)
         {
             anim.SetFloat("X", Mathf.Clamp(target.localPosition.x + 0.3f, -1, 1));
@@ -140,6 +132,7 @@ public class SlicerPlane : MonoBehaviour
             cutPlane.gameObject.SetActive(false);
             isInBladeMode = false;
             anim.SetBool("bladeMode", isInBladeMode);
+            //reflector.SetActive(false);
         }
         //update text
         text.SetText(slicesAvailable - slicesUsed + " / " + slicesAvailable);
@@ -181,13 +174,13 @@ public class SlicerPlane : MonoBehaviour
         //Debug.Log("Resetting from " + cutPlane.rotation);
         cutPlane.rotation = Quaternion.Euler(-4.0f, 3.0f, -45.0f);
         cutPlane.localRotation = Quaternion.Euler(-4.0f, 3.0f, -45.0f);
-        
+
         anim.SetFloat("X", 1f);
         anim.SetFloat("Y", -1f);
-        
+
         //planeTarget.localPosition = new Vector3(1.3f,0.17f,0f);
         //target.localPosition = new Vector3(0f,0f,9.65f);        
-               
+
     }
     void ChangePostProcessVolume(VolumeProfile outPP)
     {
@@ -199,6 +192,7 @@ public class SlicerPlane : MonoBehaviour
 
     public void Slice()
     {
+        reflector.SetActive(true);
         //If we already sliced maximun ammount of times
         if (slicesUsed >= slicesAvailable)
             return;
@@ -206,7 +200,7 @@ public class SlicerPlane : MonoBehaviour
         {
             //Increment slice and do the rest
             slicesUsed++;
-            Collider[] hits = Physics.OverlapBox(cutPlane.position, new Vector3(10, 0.1f, 10), cutPlane.rotation, layerMask);
+            Collider[] hits = Physics.OverlapBox(cutPlane.position, new Vector3(5, 0.1f, 5), cutPlane.rotation, layerMask);
             //CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, shakeFadeInTime, shakeFadeOutTime);
             ShakeCamera();
 
@@ -224,10 +218,10 @@ public class SlicerPlane : MonoBehaviour
             for (int i = 0; i < hits.Length; i++)
             {
                 SlicedHull hull = SliceObject(hits[i].gameObject, sliceMaterial);
-                /*
+                
                 particles[1].transform.position = hits[i].transform.position;
-                particles[1].transform.forward = cam.transform.forward;
-                particles[1].Play();*/
+                particles[1].transform.forward = transform.forward;
+                particles[1].Play();
 
                 /*
                 //Enemy damage
@@ -254,6 +248,7 @@ public class SlicerPlane : MonoBehaviour
                 }
             }
         }
+        reflector.SetActive(false);
 
     }
 
@@ -285,11 +280,12 @@ public class SlicerPlane : MonoBehaviour
     {
         //cam.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
         impulseSource.GenerateImpulse();
-        
+
         foreach (ParticleSystem p in particles)
         {
             p.Play();
         }
     }
+
 
 }
