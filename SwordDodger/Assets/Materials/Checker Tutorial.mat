@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ComicSample1
+  m_Name: Checker Tutorial
   m_Shader: {fileID: -6465566751694194690, guid: c1532e85bc0dbba469a529b71ab471f7,
     type: 3}
-  m_ShaderKeywords: REQUIRE_DEPTH_TEXTURE REQUIRE_OPAQUE_TEXTURE
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,9 +27,9 @@ Material:
     m_Floats:
     - BOOLEAN_D7768C: 0
     - Vector1_1425B4BE: 1
-    - Vector1_1FD1BF12: 2
-    - Vector1_44FFE7EF: 0.5
-    - Vector1_5743518B: 0.01
+    - Vector1_1FD1BF12: 30
+    - Vector1_44FFE7EF: 0.2
+    - Vector1_5743518B: 1
     - Vector1_6545BCF7: 0.05
     - Vector1_77CEF1EF: 6
     - Vector1_908C8B70: 2.3
@@ -41,5 +41,5 @@ Material:
     - Vector1_EBBA86A4: 0
     m_Colors:
     - Color_22101C48: {r: 0, g: 0, b: 0, a: 0}
-    - Color_3691F28B: {r: 1, g: 1, b: 1, a: 0}
+    - Color_3691F28B: {r: 0.7734463, g: 1, b: 0, a: 0}
     - Color_5CD81587: {r: 0, g: 0, b: 0, a: 0}

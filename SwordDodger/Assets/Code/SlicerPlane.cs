@@ -64,10 +64,13 @@ public class SlicerPlane : MonoBehaviour
 
     public bool isInBladeMode;
     Transform parent;
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        parent = transform.parent;
+        player = PlayerManager.instance.Player;
+        parent = transform.parent.parent.parent;
         cutPlaneDefault = cutPlane.eulerAngles;
         cutPlane.gameObject.SetActive(false);
         idleSound.Init();
@@ -78,12 +81,6 @@ public class SlicerPlane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //Releases mouse click
-        if(Input.GetMouseButtonUp(0))
-        {
-            //reflector.SetActive(false);
-        }
 
         if (isInBladeMode)
         {
@@ -286,6 +283,4 @@ public class SlicerPlane : MonoBehaviour
             p.Play();
         }
     }
-
-
 }

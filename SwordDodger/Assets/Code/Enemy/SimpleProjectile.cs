@@ -76,6 +76,7 @@ public class SimpleProjectile : MonoBehaviour
         {
             //Debug.Log("rebote");
             //Bounce in the opposite direction and double velocity if we are in blademode and we swing
+            playerGO.GetComponent<FPSCameraAndMovController>().PlayBounce();
                 GetComponent<Rigidbody>().velocity = -GetComponent<Rigidbody>().velocity * 2.0f;
         }
 

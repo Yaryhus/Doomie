@@ -20,8 +20,8 @@ TagManager:
   - Sliceable
   - SlicePlane
   - Bounceable
-  - 
-  - 
+  - Particles
+  - Weapon
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Particles
+    uniqueID: 1115207701
     locked: 0

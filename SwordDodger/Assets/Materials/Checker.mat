@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon Floor
+  m_Name: Checker
   m_Shader: {fileID: -6465566751694194690, guid: c1532e85bc0dbba469a529b71ab471f7,
     type: 3}
   m_ShaderKeywords: 
@@ -41,5 +41,5 @@ Material:
     - Vector1_EBBA86A4: 0
     m_Colors:
     - Color_22101C48: {r: 0, g: 0, b: 0, a: 0}
-    - Color_3691F28B: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0}
+    - Color_3691F28B: {r: 1, g: 1, b: 1, a: 0}
     - Color_5CD81587: {r: 0, g: 0, b: 0, a: 0}

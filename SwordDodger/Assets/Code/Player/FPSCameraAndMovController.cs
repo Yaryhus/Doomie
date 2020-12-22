@@ -27,6 +27,12 @@ public class FPSCameraAndMovController : MonoBehaviour
     public float minRotation = -65.0f;
     public float maxRotation = 60.0f;
 
+    [Header("Particles")]
+    [SerializeField]
+    ParticleSystem dashParticle;
+    [SerializeField]
+    ParticleSystem bounceParticle;
+
     [Header("Sonido")]
     [SerializeField]
     Sound hurtSound = null;
@@ -40,6 +46,8 @@ public class FPSCameraAndMovController : MonoBehaviour
     Sound jumpSound = null;
     [SerializeField]
     Sound dashSound = null;
+    [SerializeField]
+    Sound bounceSound = null;
 
     bool playerIsMoving = false;
     float h_mouse, v_mouse;
@@ -79,10 +87,11 @@ public class FPSCameraAndMovController : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(-v_mouse, 0, 0);
         transform.Rotate(0, h_mouse, 0);
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && characterController.velocity.magnitude > 0.1f)
         {
             dashSound.PlayOneShot(transform);
             StartCoroutine(Dash());
+            dashParticle.Play();
         }
 
         //Movement
@@ -98,27 +107,12 @@ public class FPSCameraAndMovController : MonoBehaviour
             move = transform.TransformDirection(move) * walkSpeed;
             animator.SetBool("IsMoving", true);
 
-            /*
-                        if (left == true)
-                        {
-                                animator.Play("UserCamera_MoveL");
-                                left = false;
-                                right = true;
-                        }
-                        if (right == true)
-                        {
-                                animator.Play("UserCamera_MoveR");
-                                right = false;
-                                left = true;
-                            }  
-            /**/
-
             if (Input.GetKey(KeyCode.Space))
                 move.y = jumpSpeed;
         }
 
         //Paramos
-        if(characterController.velocity.magnitude < 0.1f)
+        if (characterController.velocity.magnitude < 0.1f)
         {
             animator.SetBool("IsMoving", false);
 
@@ -134,6 +128,7 @@ public class FPSCameraAndMovController : MonoBehaviour
 
     IEnumerator Dash()
     {
+
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
@@ -201,4 +196,12 @@ public class FPSCameraAndMovController : MonoBehaviour
         }
 
     }
+
+    public void PlayBounce()
+    {
+        Debug.Log("Animacion y Sonido de rebote!");
+        bounceParticle.Play();
+        bounceSound.Play(transform);
+    }
+
 }

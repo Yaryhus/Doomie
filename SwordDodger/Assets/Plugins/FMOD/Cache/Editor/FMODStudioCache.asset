@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637430574473579992
+  lastModified: 637441502436665292
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1002560479030296672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1216319991294778521}
+  - {fileID: 5673384999154224039}
   MinDistance: 0
   MaxDistance: 0
   Length: 1110
@@ -364,13 +364,37 @@ MonoBehaviour:
   - {fileID: -5901007094993112095}
   - {fileID: 5891008836927784979}
   - {fileID: 4755422323743297763}
+  - {fileID: 112171082453383597}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1470809739105873982}
   StringsBanks:
   - {fileID: 8938838560941822200}
-  stringsBankWriteTime: 637430574473670010
+  stringsBankWriteTime: 637441502436745326
   cacheVersion: 4
+--- !u!114 &112171082453383597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Sword/BounceProjectile
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Sword/BounceProjectile
+  guid: 6953bf5a2409114a915c7e47341b8393
+  Banks:
+  - {fileID: -1470809739105873982}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &1596073325050296336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +435,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5673384999154224039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Slice/SliceMaterial
+  m_EditorClassIdentifier: 
+  Name: SliceMaterial
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &5891008836927784979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,9 +632,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/SwordDodger/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637430574473670010
+  lastModified: 637441502436745326
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1462
+    Value: 1510
   Exists: 1
